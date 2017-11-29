@@ -30,6 +30,13 @@ public class Brad02 extends JFrame {
 		myDrawer = new MyDrawer();
 		add(myDrawer, BorderLayout.CENTER);
 		
+		b1.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				myDrawer.drawRandomLine((int)(Math.random()*400), (int)(Math.random()*400));
+			}
+		});
+		
 		
 		setSize(640, 480);
 		setVisible(true);
@@ -42,18 +49,22 @@ public class Brad02 extends JFrame {
 }
 
 class MyDrawer extends JPanel {
+	private int x, y;
 	@Override
 	protected void paintComponent(Graphics g) {
 		// TODO Auto-generated method stub
 		super.paintComponent(g);
 		
 		g.setColor(Color.BLUE);
-		g.drawLine(0, 0, 200, 200);
-		
-		
-		
-		
+		g.drawLine(0, 0, x, y);
 	}
+	
+	 void drawRandomLine(int x, int y){
+		 this.x = x; this.y = y;
+		 repaint();
+	 }
+	
+	
 
 }
 
