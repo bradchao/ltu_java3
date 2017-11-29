@@ -1,5 +1,7 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -40,7 +42,19 @@ public class Brad02 extends JFrame {
 }
 
 class MyDrawer extends JPanel {
-	
+	@Override
+	protected void paintComponent(Graphics g) {
+		// TODO Auto-generated method stub
+		super.paintComponent(g);
+		
+		g.setColor(Color.BLUE);
+		g.drawLine(0, 0, 200, 200);
+		
+		
+		
+		
+	}
+
 }
 
 
